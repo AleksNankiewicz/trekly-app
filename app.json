@@ -4,10 +4,18 @@
     "web": {
       "bundler": "metro"
     },
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
+    "statusBar": {
+      "style": "dark"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#FFFFFF",
+      "barStyle": "dark-content"
+    },
     "name": "trekly-app",
-    "slug": "trekly-app"
+    "slug": "trekly-app",
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }
