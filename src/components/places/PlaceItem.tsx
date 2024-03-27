@@ -1,16 +1,16 @@
 import { View, Text, Pressable, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { placeProps } from '@/lib/types/place'
+import { router } from 'expo-router'
 
-const PlaceItem = ({
-  place,
-  onPress,
-}: {
-  place: placeProps
-  onPress: () => void
-}) => {
+const PlaceItem = ({ place }: { place: placeProps }) => {
   return (
-    <Pressable onPress={onPress} style={styles.container}>
+    <Pressable
+      onPress={() => {
+        router.push(`/places/yourPlace/${place.id}`)
+      }}
+      style={styles.container}
+    >
       {place.imageUri && (
         <Image style={styles.image} source={{ uri: place.imageUri }} />
       )}

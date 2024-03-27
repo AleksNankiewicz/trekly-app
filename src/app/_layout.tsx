@@ -64,6 +64,14 @@ export default function Layout() {
             headerTitle: 'Mapa',
           }}
         />
+        <Stack.Screen
+          name="places/yourPlace/[id]"
+          options={{
+            // presentation: 'modal',
+            headerShown: false,
+            headerTitle: 'Twoje miejsce',
+          }}
+        />
       </Stack>
     </>
   )

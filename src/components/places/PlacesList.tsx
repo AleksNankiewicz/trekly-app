@@ -7,11 +7,11 @@ import PlaceItem from './PlaceItem'
 const PlacesList = ({ places }: { places?: placeProps[] }) => {
   if (!places || places.length === 0) {
     return (
-      <View>
+      <View style={styles.noPlacesContainer}>
         <Text
           style={{
             fontSize: 16,
-            color: 'white',
+            color: 'black',
           }}
         >
           Nie masz jescze żadnych miejsc - dodaj nowe!
@@ -27,9 +27,7 @@ const PlacesList = ({ places }: { places?: placeProps[] }) => {
       <FlatList
         data={places}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <PlaceItem place={item} onPress={() => console.log('klik')} />
-        )}
+        renderItem={({ item }) => <PlaceItem place={item} />}
       />
     </View>
   )
@@ -41,6 +39,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 4,
+  },
+  noPlacesContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 
